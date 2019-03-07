@@ -5,12 +5,12 @@ from .models import Blog
 from .form import BlogPost
 
 def home(request):
-    blogs = Blog.objects #쿼리셋
-    blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 3)
-    page = request.GET.get('page')
-    posts = paginator.get_page(page)
-    return render(request, 'home.html', {'blogs':blogs, 'posts':posts })
+    # blogs = Blog.objects #쿼리셋
+    # blog_list = Blog.objects.all()
+    # paginator = Paginator(blog_list, 3)
+    # page = request.GET.get('page')
+    # posts = paginator.get_page(page)
+    return render(request, 'home.html')
 
 def detail(request, blog_id):
     details = get_object_or_404(Blog, pk = blog_id)
